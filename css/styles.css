@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: url("https://mistertea.fr/selene/img/nature/1.jpg") fixed no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.container {
+  margin: 1em auto;
+  width: 80%;
+}
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 1;
+  padding: 2em;
+  transition: 1s;
+}
+header:hover{
+  backdrop-filter: invert();
+  color: white;
+  fill: white;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  filter: none;
+  transition: .2s;
+}
+
+nav h2 {
+  font-size: 2rem;
+}
+
+.links a {
+  margin-left: 1.5em;
+  transition: 0.2s ease-in;
+}
+
+.links a:hover {
+  color: #555;
+}
+
+.title {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+img {
+  border-radius: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.hero img{
+  width: 100%;
+  height: 45vh;
+}
+.hero [type=button]{
+  margin: 1em auto;
+  width: 100%;
+  padding: 1em;
+  font-size: 2em;
+  border:none;
+  background: aliceblue;
+  transition: .5s;
+  border-radius: .5em;
+  box-shadow: 0 0 5px skyblue;
+  border: 3px transparent solid;
+}
+.hero [type=button]:hover{
+  background: lightblue;
+  box-shadow: 0 0 15px skyblue;
+  cursor:pointer;
+  border: 3px black solid;
+  animation: blink infinite 2s alternate;
+}
+.num {
+  border: 4px solid #aaa;
+  padding: 1vmin;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.telling a:hover {
+  transition: color 0.2s ease-in;
+  color: #111;
+}
+
+.story-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 1em;
+  margin-bottom: 10em;
+}
+
+.story .story-title {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.story-pics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35vh;
+  margin: 4em auto;
+}
+
+.story-pics img:first-child {
+  width: 58%;
+}
+
+.story-pics img:last-child {
+  width: 38%;
+  background: rgba(255,255,255,.7);
+  backdrop-filter: blur(10px);
+  object-fit: contain;
+}
+
+.cards, .cards figcaption{
+  display: flex;
+  justify-content: space-around;
+}
+.cards img{
+  width: 100%;
+  height:20vh;
+  border-radius: 1em 1em 0 0;
+}
+.cards figure{
+  width: 25%;
+  border-radius: 1em;
+  background: #43ffff07;
+  box-shadow: 0 0 10px lightgrey;
+  backdrop-filter: blur(5px);
+}
+.cards figcaption{
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  min-height: 35vh;
+}
+#travaux .story-content{
+  flex-direction: row-reverse;
+}
+#contact .cards{
+  display: flex;
+  justify-content: space-between;
+  margin: 2em auto;
+}
+#contact .cards figure{
+  display: flex;
+  align-items: center;
+  background: #11111155;
+  color: white;
+  padding: 0 1em;
+  text-align: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 15vh;
+}
+#contact .cards figcaption{
+  flex-direction: row;
+  gap: 2em;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0 1em;
+  min-height:0;
+  min-width:0;
+}
+#contact a{
+  display: block;
+  width: 45%;
+}
+
+footer{
+  color: white;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+footer details, footer summary{
+  text-align: left;
+  place-content: start;
+}
+footer details:hover{
+  cursor:pointer;
+  transition: .5s;
+}
+
+@keyframes blink{
+  from{
+    color: darkblue;
+    background: lightblue;
+  } to {
+    color: lightblue;
+    background: skyblue;
+  }
+}
+
+@media screen and (max-width : 700px){
+  *{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 0 auto;
+    margin: 0 auto;
+  }
+  .story-content, #travaux .story-content {
+    flex-direction: column;
+    width: 90%;
+    backdrop-filter: blur(15px);
+    border-radius: 1em;
+    border: 1px white solid;
+    box-shadow: 0 0 10px gray;
+    padding: 1em;
+  }
+  header{
+    background: black;
+    color: white;
+  }
+  header a{
+    color: lightgray;
+  }
+  h1, h2{ flex-direction: row;}
+  svg{fill: royalblue; padding: 0 .3em;}
+  .story-pics{
+    display:none;
+  }
+  .links, footer, footer p{
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+  }
+  .hero img{
+    width: 98%;
+    position: absolute;
+    z-index: -1;
+    top: 40dvh;
+  }
+  .container{
+    width: 100%;
+  }
+  .cards, .cards figure{
+    width: 95%;
+    gap: 2em;
+  }
+  #contact .cards figure figcaption, #contacts .cards a{
+    flex-direction: column;
+  }
+  #contact .cards a, #contact .cards figure{
+    width: 100vw;
+    display: block;
+    margin:0;
+  }
+}
