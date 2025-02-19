@@ -61,7 +61,7 @@ nav h2 {
 }
 
 .links a:hover {
-  color: #555;
+  color: steelblue;
 }
 
 .title {
@@ -242,6 +242,7 @@ footer details:hover{
     padding-bottom: 0;
     padding: 0 auto;
     margin: 0 auto;
+    font-size: 90%;
   }
   .story-content, #travaux .story-content {
     flex-direction: column;
@@ -255,11 +256,30 @@ footer details:hover{
   header{
     background: black;
     color: white;
+    display:none;
+    display:flex;
+    padding: .3em;
   }
   header a{
     color: lightgray;
   }
-  h1, h2{ flex-direction: row;}
+  .container{
+    width: 100%;
+  }
+  .hero img{
+    width: 98%;
+    position: absolute;
+    z-index: -1;
+    top: 40dvh;
+  }
+  .hero{
+    margin: 0;
+    padding:0;
+    text-shadow: 0 0 15px white;
+    text-align: center;
+  }
+  h1, h2{flex-direction: row;}
+  h1{font-size: 1.2em; backdrop-filter: blur(1px); padding: .2em;}
   svg{fill: royalblue; padding: 0 .3em;}
   .story-pics{
     display:none;
@@ -268,15 +288,6 @@ footer details:hover{
     flex-direction: row;
     justify-content: space-around;
     width:100%;
-  }
-  .hero img{
-    width: 98%;
-    position: absolute;
-    z-index: -1;
-    top: 40dvh;
-  }
-  .container{
-    width: 100%;
   }
   .cards, .cards figure{
     width: 95%;
