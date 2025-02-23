@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  flex-wrap: wrap;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -21,8 +20,9 @@ img {
   max-width: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 1rem;
+  max-height: 100%;
 }
-
 .container {
   margin: 1em auto;
   width: 80%;
@@ -35,6 +35,10 @@ header{
   z-index: 1;
   padding: 2em;
   transition: 1s;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(1, 153, 255, 0.158), transparent);
+  backdrop-filter: blur(10px);
 }
 header:hover{
   backdrop-filter: invert();
@@ -75,19 +79,12 @@ section {
   padding-top: 5rem;
 }
 
-img {
-  border-radius: 1rem;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
 .hero img{
   width: 100%;
   height: 45vh;
 }
 .hero [type=button]{
   margin: 1em auto;
-  width: 100%;
   padding: 1em;
   font-size: 2em;
   border:none;
@@ -102,7 +99,7 @@ img {
   box-shadow: 0 0 15px skyblue;
   cursor:pointer;
   border: 3px black solid;
-  animation: blink infinite 2s alternate;
+  animation: blink infinite 1s linear alternate;
 }
 .num {
   border: 4px solid #aaa;
@@ -174,36 +171,22 @@ img {
 #travaux .story-content{
   flex-direction: row-reverse;
 }
-#contact .cards{
+#contact .contact-cards{
   display: flex;
   justify-content: space-between;
-  margin: 2em auto;
-}
-#contact .cards figure{
-  display: flex;
-  align-items: center;
-  background: #11111155;
-  color: white;
-  padding: 0 1em;
-  text-align: center;
-  flex-wrap: nowrap;
-  width: 100%;
-  min-height: 15vh;
-}
-#contact .cards figcaption{
-  flex-direction: row;
   gap: 2em;
-  align-items: center;
-  flex-wrap: nowrap;
-  padding: 0 1em;
-  min-height:0;
-  min-width:0;
 }
-#contact a{
-  display: block;
-  width: 45%;
+#contact .contact-cards a{
+  display: grid;
+  place-content: center;
+  text-align: center;
+  width: 90%;
+  padding: 1em;
+  background: radial-gradient(lightblue, rgba(255,255,255,.7));
+  border-radius: 1em;
+  box-shadow: 0 0 5px skyblue;
+  transition: .5s;
 }
-
 footer{
   color: white;
   background: black;
@@ -222,10 +205,10 @@ footer details:hover{
 
 @keyframes blink{
   from{
-    color: darkblue;
-    background: lightblue;
+    color: skyblue;
+    background: aliceblue;
   } to {
-    color: lightblue;
+    color: steelblue;
     background: skyblue;
   }
 }
@@ -242,9 +225,8 @@ footer details:hover{
     padding-bottom: 0;
     padding: 0 auto;
     margin: 0 auto;
-    font-size: 90%;
   }
-  .story-content, #travaux .story-content {
+  .story-content, #travaux .story-content, #contact .story-content {
     flex-direction: column;
     width: 90%;
     backdrop-filter: blur(15px);
@@ -252,6 +234,7 @@ footer details:hover{
     border: 1px white solid;
     box-shadow: 0 0 10px gray;
     padding: 1em;
+    margin-bottom: 4em;
   }
   header{
     background: black;
@@ -278,6 +261,9 @@ footer details:hover{
     text-shadow: 0 0 15px white;
     text-align: center;
   }
+  .hero [type=button] span{
+    display: block;
+  }
   h1, h2{flex-direction: row;}
   h1{font-size: 1.2em; backdrop-filter: blur(1px); padding: .2em;}
   svg{fill: royalblue; padding: 0 .3em;}
@@ -290,15 +276,17 @@ footer details:hover{
     width:100%;
   }
   .cards, .cards figure{
-    width: 95%;
+    width: 99%;
     gap: 2em;
   }
   #contact .cards figure figcaption, #contacts .cards a{
     flex-direction: column;
   }
   #contact .cards a, #contact .cards figure{
-    width: 100vw;
+    width: 99%;
     display: block;
-    margin:0;
+    margin:0 auto;
+    display: grid;
+    place-content: center;
   }
 }
